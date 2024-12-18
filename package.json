@@ -1,0 +1,33 @@
+{
+  "name": "ecommerce-api",
+  "private": true,
+  "version": "1.0.0",
+  "author": "TrungQuanDev - Một Lập Trình Viên",
+  "description": "https://youtube.com/@trungquandev",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "scripts": {
+    "lint": "eslint src --ext js --report-unused-disable-directives --max-warnings 0",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel ./src -d ./build/src",
+    "build": "npm run clean && npm run build-babel",
+    "production": "npm run build && node ./build/src/server.js",
+    "dev": "nodemon --exec babel-node ./src/server.js"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.26.0",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.0",
+    "@babel/eslint-parser": "^7.25.9",
+    "@babel/node": "^7.26.0",
+    "@babel/plugin-transform-runtime": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "eslint": "^9.17.0",
+    "nodemon": "^3.1.9"
+  }
+}
